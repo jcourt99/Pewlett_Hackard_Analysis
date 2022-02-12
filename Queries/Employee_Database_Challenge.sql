@@ -48,3 +48,30 @@ where de.to_date = ('9999-01-01')
 and  (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 order by emp_no asc;
 
+--Write a query to determine count of all current employees by department regardless of retirement-eligibility status
+select distinct on (emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date 
+into all_titles1
+from employees e 
+join titles t 
+on e.emp_no = t.emp_no
+where t.to_date = ('9999-01-01')
+order by emp_no 
+;
+
+select count(emp_no), at2.title
+into count_titles1
+from all_titles1 at2  
+group by title
+order by count desc;
+
+--Query count of mentorship-eligible employees per department 
+select count(emp_no), me.title
+into mentorship_titles
+from mentorship_eligibility me  
+group by title
+order by count desc;
