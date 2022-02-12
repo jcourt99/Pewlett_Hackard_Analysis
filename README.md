@@ -7,6 +7,7 @@ Management is also looking for insight into the "silver tsunami" which is a refe
 
 ## Results
 The major points provided by the analysis are:
+
 ![retiring titles](https://github.com/jcourt99/Pewlett_Hackard_Analysis/blob/main/retiring_titles.PNG)
 
 * The total number of retirement-eligible employees is 72,458.
